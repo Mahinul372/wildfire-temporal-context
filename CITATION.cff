@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+title: "Investigating the Importance of Temporal Context in Multimodal Wildfire Spread Forecasting"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: "Hoque Mahi"
+    given-names: "Mahinul"
+    affiliation: "BRAC University, Dhaka, Bangladesh"
+license: GPL-3.0
+repository-code: "https://github.com/Mahinul372/wildfire-temporal-context"
+keywords:
+  - wildfire spread forecasting
+  - GeoAI
+  - remote sensing
+  - temporal context
+  - ablation study
+  - WildfireSpreadTS
+references:
+  - type: dataset
+    title: "WildfireSpreadTS: A dataset of multi-modal time series for wildfire spread prediction"
+    authors:
+      - family-names: Gerard
+        given-names: Sebastian
+      - family-names: Zhao
+        given-names: Yu
+      - family-names: Sullivan
+        given-names: Josephine
+    doi: 10.5281/zenodo.8006177
+    year: 2023
+  - type: article
+    title: "Adapting Video Foundation Models for Spatiotemporal Wildfire Forecasting via Cross-Modal Progressive Fine-Tuning"
+    authors:
+      - family-names: Li
+        given-names: Wenwen
+      - family-names: Hsu
+        given-names: Chia-Yu
+      - family-names: Wang
+        given-names: Sizhe
+    journal: "IEEE Transactions on Geoscience and Remote Sensing"
+    volume: 64
+    doi: 10.1109/TGRS.2026.3652453
+    year: 2026
