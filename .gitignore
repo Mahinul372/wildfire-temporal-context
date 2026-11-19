@@ -1,0 +1,14 @@
+# Raw and processed satellite data (never commit).
+data/
+# Generated PNG figures (binary; SVG versions are committed instead).
+results/figures/*.png
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+*.pkl
+*.pth
+*.npz
+*.tif
+*.tiff
+.DS_Store
