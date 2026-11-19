@@ -1,0 +1,19 @@
+loaded 349 samples
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/persistence_test_metrics.csv
+[1/13] persistence: test AP=0.288 in 52s (elapsed 52s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E1_logistic_regression_test_metrics.csv
+[2/13] E1_logistic_regression: test AP=0.440 in 81s (elapsed 132s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E1_hist_gradient_boosting_test_metrics.csv
+[3/13] E1_hist_gradient_boosting: test AP=0.425 in 293s (elapsed 425s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E2_logistic_regression_test_metrics.csv
+[4/13] E2_logistic_regression: test AP=0.423 in 105s (elapsed 531s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E2_hist_gradient_boosting_test_metrics.csv
+[5/13] E2_hist_gradient_boosting: test AP=0.441 in 458s (elapsed 989s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E3_logistic_regression_test_metrics.csv
+[6/13] E3_logistic_regression: test AP=0.401 in 122s (elapsed 1111s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E3_hist_gradient_boosting_test_metrics.csv
+[7/13] E3_hist_gradient_boosting: test AP=0.459 in 595s (elapsed 1706s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E4_logistic_regression_test_metrics.csv
+[8/13] E4_logistic_regression: test AP=0.375 in 174s (elapsed 1881s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E4_hist_gradient_boosting_test_metrics.csv
+[9/13] E4_hist_gradient_boosting: test AP=0.453 in 723s (elapsed 2604s)

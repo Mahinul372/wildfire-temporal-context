@@ -1,0 +1,274 @@
+{
+  "results": [
+    {
+      "config": "persistence",
+      "model": "persistence",
+      "window_days": 5,
+      "active_fire_mode": "all",
+      "n_features": 210,
+      "test_AP": 0.28778771751463234,
+      "test_precision": 0.5325895300054722,
+      "test_recall": 0.5370466877165017,
+      "test_F1": 0.5348088224070824,
+      "test_IoU": 0.365009584132011,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 51.6
+    },
+    {
+      "config": "E1_logistic_regression",
+      "model": "logistic_regression",
+      "window_days": 1,
+      "active_fire_mode": "all",
+      "n_features": 42,
+      "test_AP": 0.4403720131023044,
+      "test_precision": 0.12465344056843107,
+      "test_recall": 0.7787314919836915,
+      "test_F1": 0.21490630683981218,
+      "test_IoU": 0.12038937096873563,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 80.6
+    },
+    {
+      "config": "E1_hist_gradient_boosting",
+      "model": "hist_gradient_boosting",
+      "window_days": 1,
+      "active_fire_mode": "all",
+      "n_features": 42,
+      "test_AP": 0.42510287558950427,
+      "test_precision": 0.38580036932646516,
+      "test_recall": 0.7301125042150762,
+      "test_F1": 0.5048381113878437,
+      "test_IoU": 0.3376477926791233,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 293.2
+    },
+    {
+      "config": "E2_logistic_regression",
+      "model": "logistic_regression",
+      "window_days": 2,
+      "active_fire_mode": "all",
+      "n_features": 84,
+      "test_AP": 0.42267445279103855,
+      "test_precision": 0.08615018771849334,
+      "test_recall": 0.8173875724226725,
+      "test_F1": 0.155871942290436,
+      "test_IoU": 0.08452338309088546,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 105.4
+    },
+    {
+      "config": "E2_hist_gradient_boosting",
+      "model": "hist_gradient_boosting",
+      "window_days": 2,
+      "active_fire_mode": "all",
+      "n_features": 84,
+      "test_AP": 0.44115285661200676,
+      "test_precision": 0.349849807299932,
+      "test_recall": 0.7569050611569235,
+      "test_F1": 0.47852166245142785,
+      "test_IoU": 0.31451099279036,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 458.3
+    },
+    {
+      "config": "E3_logistic_regression",
+      "model": "logistic_regression",
+      "window_days": 3,
+      "active_fire_mode": "all",
+      "n_features": 126,
+      "test_AP": 0.4014736204874711,
+      "test_precision": 0.07399576581170055,
+      "test_recall": 0.8185831213022287,
+      "test_F1": 0.13572287181728773,
+      "test_IoU": 0.07280187573270809,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 122.0
+    },
+    {
+      "config": "E3_hist_gradient_boosting",
+      "model": "hist_gradient_boosting",
+      "window_days": 3,
+      "active_fire_mode": "all",
+      "n_features": 126,
+      "test_AP": 0.4592870518686606,
+      "test_precision": 0.34004471223315796,
+      "test_recall": 0.7646914564237761,
+      "test_F1": 0.4707536398720501,
+      "test_IoU": 0.30783374879680137,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 594.9
+    },
+    {
+      "config": "E4_logistic_regression",
+      "model": "logistic_regression",
+      "window_days": 5,
+      "active_fire_mode": "all",
+      "n_features": 210,
+      "test_AP": 0.37507831974216393,
+      "test_precision": 0.054930500228497936,
+      "test_recall": 0.8327457772600472,
+      "test_F1": 0.10306266657814116,
+      "test_IoU": 0.05433108662173244,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 174.3
+    },
+    {
+      "config": "E4_hist_gradient_boosting",
+      "model": "hist_gradient_boosting",
+      "window_days": 5,
+      "active_fire_mode": "all",
+      "n_features": 210,
+      "test_AP": 0.45327401495913233,
+      "test_precision": 0.3309071799251133,
+      "test_recall": 0.7721099904969192,
+      "test_F1": 0.4632688346085933,
+      "test_IoU": 0.30146381165543573,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 457.9
+    },
+    {
+      "config": "E4_M2_logistic_regression",
+      "model": "logistic_regression",
+      "window_days": 5,
+      "active_fire_mode": "current",
+      "n_features": 210,
+      "test_AP": 0.4230624910173387,
+      "test_precision": 0.044362241449814446,
+      "test_recall": 0.7948254192084854,
+      "test_F1": 0.08403421263300502,
+      "test_IoU": 0.04385997557320089,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 118.0
+    },
+    {
+      "config": "E4_M2_hist_gradient_boosting",
+      "model": "hist_gradient_boosting",
+      "window_days": 5,
+      "active_fire_mode": "current",
+      "n_features": 210,
+      "test_AP": 0.4284151406583809,
+      "test_precision": 0.39391945470803597,
+      "test_recall": 0.715735262560927,
+      "test_F1": 0.5081617551038176,
+      "test_IoU": 0.3406279178338002,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 445.3
+    },
+    {
+      "config": "E4_M3_logistic_regression",
+      "model": "logistic_regression",
+      "window_days": 5,
+      "active_fire_mode": "none",
+      "n_features": 210,
+      "test_AP": 0.042161905767660754,
+      "test_precision": 0.014684847673381948,
+      "test_recall": 0.551393274271175,
+      "test_F1": 0.02860780491916828,
+      "test_IoU": 0.014511473156154649,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 110.2
+    },
+    {
+      "config": "E4_M3_hist_gradient_boosting",
+      "model": "hist_gradient_boosting",
+      "window_days": 5,
+      "active_fire_mode": "none",
+      "n_features": 210,
+      "test_AP": 0.057961345556627124,
+      "test_precision": 0.18772104833590278,
+      "test_recall": 0.06345605591490144,
+      "test_F1": 0.09484970674486803,
+      "test_IoU": 0.04978594448987445,
+      "test_prevalence": 0.0038065922976397867,
+      "test_n_pos": 32621,
+      "runtime_seconds": 487.2
+    }
+  ],
+  "config": {
+    "events": {
+      "train": [
+        "2018/fire_21889943",
+        "2018/fire_21890524",
+        "2020/fire_24332764",
+        "2020/fire_24333000"
+      ],
+      "validation": [
+        "2019/fire_23159792",
+        "2019/fire_22938749"
+      ],
+      "test": [
+        "2021/fire_25295808",
+        "2021/fire_25411093",
+        "2021/fire_25295855"
+      ]
+    },
+    "temporal": {
+      "E1": {
+        "history_days": 1,
+        "label": "current day only (t)"
+      },
+      "E2": {
+        "history_days": 2,
+        "label": "previous 2 days (t-1, t)"
+      },
+      "E3": {
+        "history_days": 3,
+        "label": "previous 3 days (t-2, t-1, t)"
+      },
+      "E4": {
+        "history_days": 5,
+        "label": "previous 5 days (t-4..t)"
+      }
+    },
+    "modality": {
+      "M1": {
+        "active_fire": "all",
+        "label": "all historical active-fire retained"
+      },
+      "M2": {
+        "active_fire": "current",
+        "label": "earlier active-fire removed, current retained"
+      },
+      "M3": {
+        "active_fire": "none",
+        "label": "all active-fire inputs removed"
+      }
+    },
+    "models": {
+      "persistence": {
+        "type": "persistence"
+      },
+      "logistic_regression": {
+        "type": "logistic_regression",
+        "C": 1.0,
+        "class_weight": "balanced",
+        "max_iter": 1000
+      },
+      "hist_gb": {
+        "type": "hist_gradient_boosting",
+        "max_iter": 200,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31
+      }
+    },
+    "sampling": {
+      "max_pixels_per_sample": 20000,
+      "negative_to_positive_ratio": 10,
+      "min_positives_to_keep_sample": 1,
+      "max_train_rows": 200000
+    },
+    "random_seed": 42
+  }
+}

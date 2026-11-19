@@ -1,0 +1,118 @@
+# Experiment configuration for "Investigating the Importance of Temporal
+# Context in Multimodal Wildfire Spread Forecasting".
+#
+# All paths are relative to the repository root. Data lives in data/raw/
+# and is NEVER committed (see .gitignore).
+
+random_seed: 42
+n_threads: 2            # CPU threads for scikit-learn (machine has ~1.5 shared CPUs)
+
+dataset:
+  name: WildfireSpreadTS
+  zenodo_record: 8006177
+  doi: 10.5281/zenodo.8006177
+  license: CC BY 4.0
+  zip_url: "https://zenodo.org/api/records/8006177/files/WildfireSpreadTS.zip/content"
+  zip_size_bytes: 48359369821
+  documentation: "https://zenodo.org/records/8006177"
+  # Acquisition: HTTP Range requests + remote ZIP extraction of individual
+  # GeoTIFF members. The full 48.4 GB archive is NEVER downloaded.
+
+# Fire events selected by sequence completeness (longest consecutive run of
+# daily observations) and year, BEFORE any modelling -- never by prediction
+# performance. Year-based split mirrors the original benchmark's example
+# split (train 2018+2020, validation 2019, test 2021; Gerard et al. 2023).
+events:
+  train:
+    - "2018/fire_21889943"   # 46 days, 2018-07-23..2018-09-06
+    - "2018/fire_21890524"   # 52 days, 2018-07-27..2018-09-16
+    - "2020/fire_24332764"   # 46 days, 2020-08-12..2020-09-26
+    - "2020/fire_24333000"   # 45 days, 2020-08-18..2020-10-01
+  validation:
+    - "2019/fire_23159792"   # 30 days, 2019-07-30..2019-08-28
+    - "2019/fire_22938749"   # 32 days, 2019-06-04..2019-07-05
+  test:
+    - "2021/fire_25295808"   # 49 days, 2021-07-11..2021-08-28
+    - "2021/fire_25411093"   # 46 days, 2021-08-04..2021-09-18
+    - "2021/fire_25295855"   # 48 days, 2021-07-16..2021-09-01
+
+# Channel order is the dataset's own order (0-based indices here).
+# Source: WildfireSpreadTS documentation, Table 1.
+channels:
+  - {index: 0,  name: viirs_m11,            group: reflectance}
+  - {index: 1,  name: viirs_i2,             group: reflectance}
+  - {index: 2,  name: viirs_i1,             group: reflectance}
+  - {index: 3,  name: ndvi,                 group: vegetation}
+  - {index: 4,  name: evi2,                 group: vegetation}
+  - {index: 5,  name: total_precipitation,  group: weather}
+  - {index: 6,  name: wind_speed,           group: weather}
+  - {index: 7,  name: wind_direction,       group: weather, angular: true}
+  - {index: 8,  name: min_temperature,      group: weather}
+  - {index: 9,  name: max_temperature,      group: weather}
+  - {index: 10, name: energy_release,       group: fuel}
+  - {index: 11, name: specific_humidity,    group: weather}
+  - {index: 12, name: slope,                group: topography}
+  - {index: 13, name: aspect,               group: topography, angular: true}
+  - {index: 14, name: elevation,            group: topography}
+  - {index: 15, name: pdsi,                 group: weather}
+  - {index: 16, name: landcover,            group: landcover, categorical: true}
+  - {index: 17, name: fcst_precipitation,   group: forecast}
+  - {index: 18, name: fcst_wind_speed,      group: forecast}
+  - {index: 19, name: fcst_wind_direction,  group: forecast, angular: true}
+  - {index: 20, name: fcst_temperature,     group: forecast}
+  - {index: 21, name: fcst_humidity,        group: forecast}
+  - {index: 22, name: active_fire,          group: target}
+
+target_channel: 22
+
+# Experiments. E1-E4: temporal history ablation (input days ending at t,
+# target is day t+1). M1-M3: historical active-fire ablation.
+# All configurations share the same eligible samples (5-day history
+# requirement) and the same event-level splits.
+experiments:
+  temporal:
+    E1: {history_days: 1, label: "current day only (t)"}
+    E2: {history_days: 2, label: "previous 2 days (t-1, t)"}
+    E3: {history_days: 3, label: "previous 3 days (t-2, t-1, t)"}
+    E4: {history_days: 5, label: "previous 5 days (t-4..t)"}
+  modality:
+    M1: {active_fire: all,      label: "all historical active-fire retained"}
+    M2: {active_fire: current,  label: "earlier active-fire removed, current retained"}
+    M3: {active_fire: none,     label: "all active-fire inputs removed"}
+
+models:
+  persistence: {type: persistence}
+  logistic_regression:
+    type: logistic_regression
+    C: 1.0
+    class_weight: balanced
+    max_iter: 1000
+  hist_gb:
+    type: hist_gradient_boosting
+    max_iter: 200
+    learning_rate: 0.1
+    max_leaf_nodes: 31
+
+# Pixel sampling for model fitting (bounded for CPU/RAM). All positive
+# (fire) pixels are kept; negatives are subsampled to a fixed ratio.
+# Sampling is done per sample (event-day) with a fixed seed.
+sampling:
+  max_pixels_per_sample: 20000
+  negative_to_positive_ratio: 10
+  min_positives_to_keep_sample: 1
+  # Global cap on assembled training rows (positives always kept).
+  max_train_rows: 200000
+
+evaluation:
+  primary_metric: average_precision
+  fixed_threshold: 0.5
+  # F1-optimal threshold is selected on validation data only, never on test.
+  bootstrap_samples: 1000
+
+paths:
+  raw_data: data/raw
+  processed_data: data/processed
+  results_tables: results/tables
+  results_figures: results/figures
+  summary_json: results/experiment_summary.json
+  report: reports/research_report.md

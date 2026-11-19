@@ -1,0 +1,11 @@
+already done: ['E1_hist_gradient_boosting', 'E1_logistic_regression', 'E2_hist_gradient_boosting', 'E2_logistic_regression', 'E3_hist_gradient_boosting', 'E3_logistic_regression', 'E4_hist_gradient_boosting', 'E4_logistic_regression', 'persistence']
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E4_M2_logistic_regression_test_metrics.csv
+[resume 1] E4_M2_logistic_regression: test AP=0.423 in 118s (elapsed 118s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E4_M2_hist_gradient_boosting_test_metrics.csv
+[resume 2] E4_M2_hist_gradient_boosting: test AP=0.428 in 445s (elapsed 563s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E4_M3_logistic_regression_test_metrics.csv
+[resume 3] E4_M3_logistic_regression: test AP=0.042 in 110s (elapsed 674s)
+  wrote /home/hatch/workspace/wildfire-temporal-context/results/tables/E4_M3_hist_gradient_boosting_test_metrics.csv
+[resume 4] E4_M3_hist_gradient_boosting: test AP=0.058 in 487s (elapsed 1161s)
+resume done: 4 configs in 1161s
+exit=0

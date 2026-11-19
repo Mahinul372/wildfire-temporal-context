@@ -1,0 +1,6 @@
+E4 HistGB re-run: AP=0.453 in 458s
+E4 HistGB metrics reproduce exactly on re-run.
+wrote /home/hatch/workspace/wildfire-temporal-context/results/experiment_summary.json
+  wrote figures -> /home/hatch/workspace/wildfire-temporal-context/results/figures
+figures done in 462s
+exit=0

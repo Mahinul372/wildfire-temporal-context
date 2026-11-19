@@ -1,0 +1,13 @@
+# CPU-only requirements (wheels; no CUDA, no GPU packages).
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+matplotlib>=3.8
+scikit-learn>=1.5
+h5py>=3.10
+tifffile>=2024.1
+imagecodecs>=2024.1
+PyYAML>=6.0
+requests>=2.31
+remotezip>=0.12
+pytest>=8.0
